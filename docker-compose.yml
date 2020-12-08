@@ -1,0 +1,22 @@
+version: '3'
+services: 
+  mysql: 
+    build: ./mysql
+    ports: 
+     - "3306:3306"
+    env_file:
+     - .databaseenv
+  flask:
+    build: ./flask
+    ports:
+     - "5000:5000"
+    env_file: 
+     - .flaskenv
+	links: 
+	 - mysql
+  nginx:
+    build: ./nginx
+    ports:
+      - "80:80"
+    links:
+     - flask

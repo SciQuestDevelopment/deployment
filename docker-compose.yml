@@ -2,8 +2,8 @@ version: '3'
 services: 
   mysql: 
     build: ./mysql
-    volumes:
-     - ./mysql/data:/var/lib/mysql
+    volumes: 
+     - /var/lib/mysql
     env_file: 
      - .env
   flask:

@@ -1,5 +1,5 @@
 FROM python:3.7
-RUN git clone https://github.com/SciQuestDevelopment/Server.git /server
+RUN git clone https://gitee.com/dennis9707/Server server
 COPY .env /server/
 WORKDIR /server/
 RUN git checkout development \
